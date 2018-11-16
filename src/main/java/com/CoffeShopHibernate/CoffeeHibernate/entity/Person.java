@@ -8,14 +8,17 @@ import javax.persistence.Id;
 @Entity
 public class Person {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY) 
+	private Integer id;
+	
 	private String name;
 	private String email;
 	private String phone;
 	private String password;
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY) 
-	private Integer id;
+	
+	
 	public Person(String name, String email, String phone, String password) {
 		super();
 		this.name = name;

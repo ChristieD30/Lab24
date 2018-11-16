@@ -1,57 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    	
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Welcome to Christies Coffee</title>
+<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/united/bootstrap.min.css" rel="stylesheet">
+<link href = "main.css" rel="stylesheet">
 </head>
 <body>
 
-<h1>Register</h1>
-	<form action= "addperson">
-	Name: <input type = "text" name = "pname">
-	Email: <input type = "text" name = "pemail">
-	Phone: <input type = "text" name = "pphone">
-	Password: <input type = "text" name = "ppassword">
-	<input type = "submit" value ="Add">
-	 </form>
-	
-	
-	
-	
-	
-	<div class ="container">
-	<h1>Our Coffee</h1>
-	
-		<table class="table">
-			<thead>
-			<tr>
-				<th>Brand</th>
-				<th>Type</th>
-				<th>Picture</th>
-				<th>Price</th>
-				
-				</tr>
-			</thead>
-			<tbody>
-			
-				<c:forEach items="${items}" var="p">
-					<tr>
-						<td>${p.brand}</td>
-						<td>${p.description}</td>
-						<td> <img src = "${p.imagePath}"></td>
-						<td>${p.price}</td>
-						<td><a class ="btn btn-primary" href = "/update?itemid=${p.id}&n=${p.brand}">Edit</a></td>
-						<td><a class ="btn btn-primary" href = "/delete?itemid=${p.id}">Remove</a></td>
-				
-					</tr>
 
-				</c:forEach>
-			</tbody>
-		</table>
-		</div> 
+
+
+<div class = "container">
+<h1>Welcome to Christie's coffee</h1>
+<img src =https://images.pexels.com/photos/414630/pexels-photo-414630.jpeg?auto=compress&cs=tinysrgb&h=350" id = "coffee" height = "200px" width="200px">
+	<br> <br>
+	<a href ="/reg" class = "btn btn-primary">Register</a> <br> <br>
+	
+	<a href ="/coffee" class = "btn btn-primary">Go to order page</a>
+	</div>
 
 </body>
 </html>

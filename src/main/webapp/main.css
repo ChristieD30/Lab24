@@ -1,0 +1,12 @@
+@charset "UTF-8";
+body{
+	  background-image: url("http://i65.tinypic.com/jkw29v.jpg");
+}
+.container{
+	text-align:center;
+	position:relative;
+	width: 100%;
+}
+#coffee{
+	border: solid 2px black;
+}

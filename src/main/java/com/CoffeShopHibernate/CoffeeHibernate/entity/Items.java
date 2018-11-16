@@ -4,17 +4,21 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
+
 
 @Entity
+@Table (name = "items")
 public class Items {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY) 
-	private int id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 	
 	 private String brand;
 	 private String description;
-	 private String imagePath;
+	
 	 private Double price;
 	 
 	 
@@ -22,33 +26,22 @@ public class Items {
 	 
 	 
 	 
-	public Items(String brand, String description, String imagePath,  double price, int id) {
+	public Items(String brand, String description,  double price, Integer id) {
 		super();
 		this.brand = brand;
 		this.description = description;
 		this.price = price;
 		this.id = id;
-		this.imagePath = imagePath;
+	
 	}
-	public String getImagePath() {
-		return imagePath;
-	}
-	public void setImagePath(String imagePath) {
-		this.imagePath = imagePath;
-	}
-	public int getId() {
+	
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
-	public Items(String brand, String description, double price, int id) {
-		super();
-		this.brand = brand;
-		this.description = description;
-		this.price = price;
-		this.id = id;
-	}
+
 	public Items(String brand, String description, double price) {
 		super();
 		this.brand = brand;

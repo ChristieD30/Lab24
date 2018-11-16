@@ -15,13 +15,20 @@ public class PersonController {
 	
 	@Autowired
 	ItemsRepository item;
+	@Autowired
 	PersonRepository p;
 	
 	@RequestMapping("/")
 	public ModelAndView index(){
 	
-			return new ModelAndView("index", "items", item.findAll());
+			return new ModelAndView("index");
 		}
+	@RequestMapping("/reg")
+	public ModelAndView registerPage(){
+	
+			return new ModelAndView("register");
+		}
+	
 	
 	@RequestMapping("/addperson")
 	public ModelAndView addNewPerson(@RequestParam("pname") String name, @RequestParam("pemail") String email,@RequestParam("pphone") String phone,@RequestParam("ppassword") String password)  {
@@ -33,6 +40,24 @@ public class PersonController {
 		
 		return new ModelAndView( "redirect:/");
 	}
+	
+	
+
+	@RequestMapping("/coffee")
+	public ModelAndView coffee(){
+	
+			return new ModelAndView("coffeepage", "items", item.findAll());
+		}
+	
+	
+	@RequestMapping("/added")
+	public ModelAndView addpage() {
+	
+
+		
+		return new ModelAndView("registerresults");
+	}
+	
 	
 	
 	}
